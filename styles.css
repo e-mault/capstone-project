@@ -1,0 +1,536 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2b8e60; /* Soft muted blue */
+    color: #000000; /* Light text */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Main title */
+h1 {
+    color: #f7d43b; /* Gold color */
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* product list container */
+/* product list container */
+#product-list {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 items per row */
+    gap: 30px; /* Gap between items */
+    padding: 20px;
+    max-width: 1200px; /* Optional: limit the maximum width */
+    margin: 0 auto; /* Center the grid on the page */
+}
+
+/* Responsive adjustments */
+@media (min-width: 1200px) {
+    .product-card {
+        max-width: 300px; /* Adjust as needed for larger screens */
+        flex: 1 0 150px; /* Allow items to grow */
+    }
+}
+
+@media (max-width: 1200px) {
+    #product-list {
+        grid-template-columns: repeat(5, 1fr); /* 5 items per row */
+    }
+    .product-card {
+        max-width: 120px; /* Adjust size for medium screens */
+        flex: 1 0 120px;
+    }
+}
+
+@media (max-width: 800px) {
+    #product-list {
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    }
+    .product-card {
+        max-width: 100px; /* Adjust size for smaller screens */
+        flex: 1 0 100px;
+    }
+}
+
+@media (max-width: 600px) {
+    #product-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    }
+    .product-card {
+        max-width: 80px; /* Adjust size for mobile screens */
+        flex: 1 0 80px;
+    }
+}
+
+/* Individual product card styling */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%; /* Make cards take full width of grid cell */
+    max-width: 200px; /* Set a max-width to keep them uniform */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
+    max-width: 1200px; /* Set a max width for the grid */
+    margin: 0 auto; /* Center the grid on the page */
+    position: relative; /* Allows absolute positioning of child elements */
+}
+/* Add a hover effect */
+.product-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.product-card input[type='number'] {
+    width: 50px; /* Set width of quantity input */
+    margin-right: 5px; /* Space between input and button */
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: fill;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease; /* Increased duration for smoother zoom */
+}
+
+.product-card img:hover {
+    transform: scale(1.15); /* Increase scale for more pronounced zoom effect */
+}
+
+/* Product name styling */
+.product-card h2 {
+    font-size: 1.2em;
+    margin:0px 0;
+    margin-bottom: 2px 0;
+    color: #34495e;
+}
+
+/* Product price styling */
+.product-card p {
+    font-size: 1em;
+    color: #e74c3c; /* Red for price */
+    font-weight: bold;
+    margin: 0px 0;
+}
+
+/* Button styling */
+.product-card button {
+    background-color: #f7d43b; /* Gold button */
+    color: #2b4d8e; /* Darker blue text */
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+/* Button hover effect */
+.product-card button:hover {
+    background-color: #e6c92e; /* Darker gold on hover */
+}
+
+.product-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-width: 400px; /* Set a max width for the modal */
+    width: 100%; /* Ensure it takes the full width up to max */
+    overflow: auto; /* Add scroll if content exceeds the modal height */
+}
+
+.image-container {
+    position: relative; /* Positioning for the zoom effect */
+    overflow: hidden; /* Hide overflow to prevent overlap */
+}
+
+.zoom-image {
+    width: 100%; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.1s ease; /* Smooth transition for zoom effect */
+    transform-origin: 0 0; /* Anchor zoom to the top-left corner */
+    cursor: zoom-in; /* Indicate that the image can be zoomed */
+}
+/* Additional styles for text */
+.product-details h2 {
+    margin-top: 0; /* Remove margin above title */
+}
+
+.product-details p {
+    margin: 10px 0; /* Add spacing around description */
+}
+
+body {
+    background-color: #dfe8eb; /* A light blue-gray for a calm feel */
+}
+
+h1 {
+    background-color: #2C3E50; /* Dark blue background for the header */
+    color: white; /* White text */
+    padding: 10px; /* Add some padding */
+}
+
+footer {
+    background-color: #34495e; /* Darker shade for footer */
+    color: white; /* White text */
+    text-align: center; /* Centered text */
+    padding: 10px; /* Padding for spacing */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+#header-image {
+    width: 100vw;          /* Full width of the viewport */
+    height: 50vh;          /* Height is 40% of the viewport */
+    object-fit: cover;     /* Ensure the image doesn't distort */
+    margin: 0;             /* No margin around the image */
+    padding: 0;
+    display: block;        /* Prevent any space below the image */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;           /* Ensure full width with no extra padding/margins */
+    overflow-x: hidden;    /* Prevent horizontal scrolling */
+}
+
+
+/* Center the filter and search bar section */
+#filter-search-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Ensure category filter and search input are inline */
+#category-filter, #search-input {
+    display: inline-block;
+    margin: 10px;
+}
+
+#shopping-cart {
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    width: 300px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+#shopping-cart h2 {
+    text-align: center;
+    font-size: 18px;
+}
+
+#cart-items {
+    list-style-type: none;
+    width: auto;
+    padding: 0;
+    margin: 0;
+}
+
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin-bottom: 5px; /* Reduced margin for tighter spacing */
+}
+
+#cart-items li button.remove-btn {
+    background-color: #e74c3c; /* Red color for remove button */
+    color: white;
+    border: none;
+    padding: 5px 8px; /* Smaller padding */
+    font-size: 0.8em; /* Smaller font size */
+    cursor: pointer;
+    border-radius: 3px; /* Slightly rounded corners */
+}
+
+#cart-total {
+    padding: 10px;
+    font-weight: bold;
+}
+
+#checkout-btn {
+    width: 100%;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#checkout-btn:hover {
+    background-color: #0056b3;
+}
+
+.cart {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+}
+
+.cart input[type='number'] {
+    width: 40px; /* Smaller width */
+    height: 30px; /* Smaller height */
+    padding: 2px; /* Smaller padding */
+    font-size: 12px; /* Smaller font size */
+    margin-left: 5px; /* Space between quantity input and other elements */
+}
+.cart-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.cart-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    right: 0;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    width: 300px;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart:hover .cart-dropdown {
+    display: block;
+}
+
+#cart-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#cart-icon {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure the cart icon is above other elements */
+}
+
+#cart-items {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+#cart-items-container {
+    display: none; /* Initially hidden */
+    position: fixed;
+    width: 350px;
+    right: 20px;
+    top: 60px;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Ensure the cart items are above other elements */
+    max-height: 300px;
+    overflow-y: auto; /* Allow scrolling if items exceed height */
+}
+#cart-container:hover + #cart-items-container {
+    display: block;
+}
+
+.cart-hover {
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #2C3E50;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Make sure it appears above other content */
+}
+
+#autocomplete-list {
+    position: absolute; /* Make sure it is positioned correctly */
+    z-index: 1000; /* Ensure it appears above other content */
+    width: calc(100% - 2px); /* Adjust width to match the input */
+    background-color: white; /* Ensure a solid background for readability */
+    border: 1px solid #ccc; /* Add a border to differentiate from background */
+    border-radius: 4px; /* Optional: rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: add shadow for depth */
+}
+
+.autocomplete-suggestions {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    width: calc(100% - 2px);
+    overflow-y: auto;
+    z-index: 1000;
+    display: none; /* hidden initially */
+}
+
+.autocomplete-suggestions div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.autocomplete-suggestions div:hover {
+    background-color: #f0f0f0;
+}
+
+.autocomplete-items {
+    position: absolute; /* Make sure it's positioned relative to its container */
+    border: none;
+    border-bottom: none;
+    z-index: 99; /* Make sure it appears above other content */
+    top: 100%; /* Position it right below the input */
+    left: 0; /* Align it with the left side of the input */
+    right: 0; /* Ensure it doesn't exceed the input width */
+    background-color: transparent; /* Background color */
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.autocomplete-item:last-child {
+    border-bottom: none; /* Remove border from the last item */
+}
+
+.autocomplete-items div:hover {
+    background-color: #e9e9e9; /* Highlight effect on hover */
+}
+
+/* Shopping cart size */
+#cart-container {
+    width: 300px; /* Adjust this to make the cart bigger */
+    /* other styling */
+}
+
+/* Quantity and remove buttons */
+.cart-item .quantity-button, .cart-item .remove-button {
+    font-size: 50px; /* Make the buttons smaller */
+    padding: 12px 20px; /* Adjust padding if needed */
+    /* additional styles as desired */
+}
+
+.story-image {
+    display: block;
+    width: 100%; /* Make the images responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 600px; /* Set a max width to avoid overly large images */
+    margin: 20px 0; /* Add spacing above and below the images */
+} 
+.Eryn-image {
+    display: block;
+    width: 100%; /* Make the images responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 150px; /* Set a max width to avoid overly large images */
+    margin: 20px 0; /* Add spacing above and below the images */
+}
+
+.Andrew-image {
+    display: block; /* To allow margins to work properly */
+    margin: 0 auto; /* Center it horizontally by default */
+    margin-left: 0%; /* Shift it to the left by reducing margin-left */
+    margin-top: 10px; /* Add space under the text */
+    max-width: 100%; /* Ensure it scales well and doesn't overflow */
+}
+
+.testimonial-image {
+    width: 100%; /* Make the images responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 600px; /* Set a max width to avoid overly large images */
+    margin: 20px 0; /* Add spacing above and below the images */
+}
+
+/* Center the navigation */
+header nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Center the main content */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Center the images and make them responsive */
+main img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Paragraph styling */
+main p {
+    text-align: center; /* Center text in paragraphs */
+    margin-bottom: 20px;
+}
+
+/* Styling for list items (Meet the Team) */
+main ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    text-align: center;
+}
+
+main ul li {
+    margin-bottom: 15px;
+}
+
+/* Style blockquote */
+blockquote {
+    font-style: italic;
+    margin: 20px auto;
+    max-width: 600px;
+}

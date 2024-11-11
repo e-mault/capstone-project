@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mythical Adventures</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <a href="about.html">About Us</a> <!-- Link to About Us page -->
+        <a href="#" onclick="scrollToTop()">Home</a> <!-- Home button -->
+    </nav>
+    <!-- Header with image -->
+    <header>
+        <h1>Welcome to Mythical Adventures</h1>
+        <img src="https://cdnb.artstation.com/p/assets/images/images/024/699/161/large/felix-ortiz-petrik-the-wise-in-search-of-adventure-1.jpg?1583251701" alt="Mythical Adventures" id="header-image">
+    </header>
+
+<!-- Search and filter section -->
+<section id="filter-search-section">
+    <label for="search-input">Search Products:</label>
+    <input type="text" id="search-input" placeholder="Search by name" />
+    <div id="autocomplete-list" class="autocomplete-suggestions"></div> <!-- Suggestions container -->
+
+    <label>Filter by Category:</label>
+    <div id="category-filter">
+        <label>
+            <input type="checkbox" value="Dungeons & Dragons"> Dungeons & Dragons
+        </label>
+        <label>
+            <input type="checkbox" value="Warhammer"> Warhammer
+        </label>
+        <label>
+            <input type="checkbox" value="Magic: The Gathering"> Magic: The Gathering
+        </label>
+        <label>
+            <input type="checkbox" value="General"> General
+        </label>
+    </div>
+</section>
+
+    <!-- Product list will go here -->
+    <div id="product-list"></div>
+
+    <!-- Shopping Cart Section -->
+    <div id="cart-container">
+        <i class="fas fa-shopping-cart" id="cart-icon"></i>
+    </div>
+    <div id="cart-items-container" class="cart-hover">
+        <ul id="cart-items">
+            <!-- More items can be dynamically added here -->
+        </ul>
+        <p>Total: $<span id="cart-total">0.00</span></p>
+        <button id="checkout-btn">Checkout</button>
+    </div>
+
+    <!-- Product Details Modal (hidden initially) -->
+    <div id="product-details-modal" class="modal" style="display: none;">
+        <!-- Modal content will be populated by JavaScript -->
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="scripts.js"></script>
+</body>
+</html>
